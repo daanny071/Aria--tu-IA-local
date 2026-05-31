@@ -1,0 +1,93 @@
+========================================
+         COMANDOS DE ARIA
+========================================
+
+----------------------------------------
+🔊 VOLUMEN
+----------------------------------------
+"sube el volumen"
+"baja el volumen"
+"silencia" / "mutea"
+"activa el sonido" / "quita el mute"
+"qué volumen hay" / "volumen actual"
+
+----------------------------------------
+🎵 MÚSICA
+----------------------------------------
+"pausa la música"
+"siguiente canción"
+"canción anterior"
+
+----------------------------------------
+📱 APPS - ABRIR
+----------------------------------------
+"abre Brave"
+"abre Discord"
+"abre Steam"
+"abre Spotify"
+"abre YouTube Music"
+"abre WhatsApp"
+"abre Hydra"
+"abre la calculadora"
+"abre el explorador"
+"abre el bloc de notas"
+"abre el administrador de tareas"
+
+----------------------------------------
+📱 APPS - CERRAR
+----------------------------------------
+"cierra Brave"
+"cierra Discord"
+"cierra Steam"
+"cierra Spotify"
+"cierra YouTube Music"
+"cierra WhatsApp"
+"cierra Hydra"
+"cierra el notepad"
+
+----------------------------------------
+💻 CONTROL DEL PC
+----------------------------------------
+"apaga el PC"
+"apaga el PC en 10 minutos"  (puedes poner cualquier número)
+"reinicia el PC"
+"reinicia el PC en 5 minutos"
+"cancela el apagado"
+"bloquea el PC"
+"haz una captura"
+
+----------------------------------------
+🌐 INTERNET
+----------------------------------------
+"busca el precio del bitcoin"
+"busca noticias de hoy"
+"googlea qué tiempo hace en Madrid"
+"busca información sobre..."
+
+----------------------------------------
+👁️ PANTALLA Y CÁMARA
+----------------------------------------
+"mira mi pantalla"
+"qué ves en mi pantalla"
+"qué hay en la pantalla"
+"usa la cámara"
+"mira por la cámara"
+
+----------------------------------------
+🤖 CONVERSACIÓN GENERAL
+----------------------------------------
+Puedes preguntarle cualquier cosa directamente:
+"qué es la fotosíntesis"
+"cómo se hace una tortilla"
+"tradúceme esta frase al inglés"
+"explícame qué es Python"
+
+----------------------------------------
+⚙️ NOTAS
+----------------------------------------
+- Pulsa ALT+Z para despertar a Aria
+- Pulsa ALT+Z mientras habla para interrumpirla
+- Si estás en pantalla completa, Aria no responde (modo no molestar)
+- Aria recuerda las últimas 10 conversaciones de la sesión
+- Todo queda guardado en D:\ARIA\historial.txt
+========================================

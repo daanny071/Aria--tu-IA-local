@@ -1,0 +1,15 @@
+faster-whisper
+edge-tts
+playsound==1.2.2
+keyboard
+pystray
+Pillow
+requests
+sounddevice
+numpy
+opencv-python
+mss
+pycaw
+pywin32
+ddgs
+langdetect
