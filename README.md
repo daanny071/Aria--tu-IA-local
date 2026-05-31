@@ -49,7 +49,7 @@ Aria es un asistente de inteligencia artificial personal que vive en tu escritor
 
 ### 1. Clona el repositorio
 ```bash
-git clone https://github.com/TU_USUARIO/aria.git
+git clone https://github.com/daanny071/aria.git
 cd aria
 ```
 
