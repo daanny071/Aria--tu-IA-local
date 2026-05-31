@@ -9,6 +9,7 @@ Aria es un asistente de inteligencia artificial personal que vive en tu escritor
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![Windows](https://img.shields.io/badge/Platform-Windows-blue)
 ![Ollama](https://img.shields.io/badge/IA-Ollama%20local-green)
+![Version](https://img.shields.io/badge/Versión-1.1-orange)
 ![Licencia](https://img.shields.io/badge/Licencia-MIT-green)
 
 ---
@@ -31,6 +32,16 @@ Aria es un asistente de inteligencia artificial personal que vive en tu escritor
 | 🗣️ Voces | Cambia la voz de Aria al instante |
 | 🧮 Cálculos | Resuelve operaciones matemáticas |
 | 🌐 Traducir | Traduce frases a varios idiomas |
+| 💻 Recursos | RAM, CPU y disco en tiempo real |
+| 💰 Crypto | Precio de Bitcoin, Ethereum y más |
+| 📅 Calendario | Consulta tus eventos de Google Calendar |
+| 📧 Gmail | Lee tus emails sin leer en voz alta |
+| 🌤️ Tiempo | Temperatura y previsión al instante |
+| 📰 Noticias | Titulares del día por voz |
+| 📄 Documentos | Lee PDFs y archivos de texto en voz alta |
+| ⌨️ Escritura | Escribe por ti en cualquier campo |
+| 🔍 Archivos | Busca archivos por nombre en tu PC |
+| 🪟 Ventanas | Mueve y redimensiona ventanas con voz |
 
 ---
 
@@ -77,13 +88,27 @@ ollama pull moondream
 ```
 
 ### 5. Configura Aria
-Edita `config.py` para ajustar:
+Copia `config.example.py` como `config.py` y edítalo:
+```bash
+copy config.example.py config.py
+```
+Ajusta:
 - **Hotkeys** — por defecto `Alt+Z` (voz) y `Alt+X` (texto)
 - **MICRO_INDEX** — si tu micrófono no es el predeterminado, prueba 0, 1, 2...
 - **WHISPER_MODEL** — `tiny` (rápido) o `medium` (preciso)
 - **TTS_VOICE** — la voz por defecto
+- **CIUDAD_TIEMPO** — tu ciudad para el tiempo
+- **NEWSDATA_API_KEY** — API key gratuita de [newsdata.io](https://newsdata.io) para noticias
 
-### 6. Arranca Aria
+### 6. Google Calendar y Gmail (opcional)
+Para conectar con tu cuenta de Google:
+1. Crea un proyecto en [Google Cloud Console](https://console.cloud.google.com)
+2. Activa las APIs de **Google Calendar** y **Gmail**
+3. Crea credenciales OAuth y descarga el `credentials.json`
+4. Coloca el archivo en la carpeta de Aria
+5. La primera vez que uses el calendario o Gmail, se abrirá el navegador para autorizar
+
+### 7. Arranca Aria
 ```bash
 python main.py
 ```
@@ -123,6 +148,17 @@ Aria aparecerá en la bandeja del sistema con un icono verde 🟢
 "Cambia tu voz a masculina"
 "Me llamo Carlos"
 "Apaga el PC en 5 minutos"
+"¿Cuánta RAM tengo libre?"
+"¿Cuánto vale el Bitcoin?"
+"¿Qué tengo mañana?"
+"¿Tengo emails sin leer?"
+"¿Qué tiempo hace?"
+"Noticias de hoy"
+"Léeme C:\Users\TuNombre\documento.pdf"
+"Escribe hola qué tal en el chat"
+"Busca el archivo factura"
+"Pon Chrome a la izquierda"
+"Maximiza Discord"
 ```
 
 ---
@@ -131,27 +167,37 @@ Aria aparecerá en la bandeja del sistema con un icono verde 🟢
 
 ```
 aria/
-├── main.py          # Núcleo principal y hotkeys
-├── config.py        # Configuración (edita esto)
-├── ai.py            # Comunicación con Ollama
-├── audio.py         # Grabación y transcripción (Whisper)
-├── tts.py           # Texto a voz (edge-tts)
-├── capture.py       # Captura de pantalla y cámara
-├── search.py        # Búsqueda en internet
-├── historial.py     # Historial y memoria persistente
-├── perfil.py        # Perfil del usuario
-├── idioma.py        # Detección de idioma y voces
-├── sistema.py       # Control del sistema Windows
-├── volume.py        # Control de volumen
-├── notas.py         # Sistema de notas
-├── temporizador.py  # Temporizadores
-├── recordatorios.py # Recordatorios
-├── calculadora.py   # Cálculos matemáticos
-├── traductor.py     # Traducciones
-├── utilidades.py    # YouTube, portapapeles
-├── nodisturb.py     # Detección pantalla completa
-├── notificacion.py  # Notificaciones Windows
-└── input_texto.py   # Input de texto
+├── main.py               # Núcleo principal y hotkeys
+├── config.py             # Configuración personal (no se sube)
+├── config.example.py     # Plantilla de configuración
+├── ai.py                 # Comunicación con Ollama
+├── audio.py              # Grabación y transcripción (Whisper)
+├── tts.py                # Texto a voz (edge-tts)
+├── capture.py            # Captura de pantalla y cámara
+├── search.py             # Búsqueda en internet
+├── historial.py          # Historial y memoria persistente
+├── perfil.py             # Perfil del usuario
+├── sistema.py            # Control del sistema Windows
+├── volume.py             # Control de volumen
+├── notas.py              # Sistema de notas
+├── temporizador.py       # Temporizadores
+├── recordatorios.py      # Recordatorios
+├── calculadora.py        # Cálculos matemáticos
+├── traductor.py          # Traducciones
+├── utilidades.py         # YouTube, portapapeles
+├── nodisturb.py          # Detección pantalla completa
+├── input_texto.py        # Input de texto
+├── recursos.py           # Monitor RAM, CPU, disco
+├── crypto.py             # Precios de criptomonedas
+├── buscador_archivos.py  # Búsqueda de archivos
+├── google_calendar.py    # Integración Google Calendar
+├── gmail.py              # Integración Gmail
+├── aviso_diario.py       # Aviso automático a las 20:00
+├── tiempo.py             # Previsión meteorológica
+├── noticias.py           # Titulares del día
+├── lector_docs.py        # Leer PDFs y TXT en voz alta
+├── escritura.py          # Escritura por voz en cualquier campo
+└── ventanas.py           # Control de ventanas
 ```
 
 ---
@@ -199,11 +245,32 @@ Estos archivos están en `.gitignore` y nunca se suben al repositorio.
 
 Las contribuciones son bienvenidas. Algunas ideas:
 
-- Soporte para más idiomas
 - Wake word ("Aria, oye...")
-- Integración con Google Calendar
-- Mejor visión con Gemini API
+- Integración con WhatsApp
+- Leer notificaciones del sistema
 - Interfaz gráfica de configuración
+- Soporte para más idiomas
+
+---
+
+## 📋 Changelog
+
+### v1.1
+- Monitor de recursos — RAM, CPU y disco en tiempo real
+- Precios de criptomonedas en tiempo real (CoinGecko)
+- Integración con Google Calendar y Gmail
+- Previsión meteorológica por voz
+- Resumen de noticias del día (NewsData)
+- Leer PDFs y archivos de texto en voz alta
+- Escritura por voz en cualquier campo del PC
+- Búsqueda de archivos por nombre
+- Control de ventanas — mover, redimensionar, maximizar
+- Saludo con el tiempo al arrancar
+- Aviso automático diario a las 20:00 con eventos del día siguiente
+- Configuración centralizada en `config.py`
+
+### v1.0
+- Lanzamiento inicial
 
 ---
 
