@@ -1,5 +1,9 @@
 # 🤖 Aria — IA Ambiental para Windows
 
+<p align="center">
+  <img src="assets/ariaimage.png" width="400" alt="Aria Logo">
+</p>
+
 Aria es un asistente de inteligencia artificial personal que vive en tu escritorio. Se activa con un hotkey, te escucha, piensa y te responde hablando. **100% gratuito y local** — no necesita ninguna API de pago ni conexión a internet para funcionar.
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
@@ -49,7 +53,7 @@ Aria es un asistente de inteligencia artificial personal que vive en tu escritor
 
 ### 1. Clona el repositorio
 ```bash
-git clone https://github.com/TU_USUARIO/aria.git
+git clone https://github.com/daanny071/aria.git
 cd aria
 ```
 
