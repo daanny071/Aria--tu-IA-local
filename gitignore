@@ -1,0 +1,17 @@
+# Configuración personal — nunca subir
+config.py
+
+# Tokens de Google
+*.pkl
+token_*.pkl
+credentials.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Audio temporal
+*.wav
+*.mp3
